@@ -13,7 +13,6 @@ SCOOTER_CSV = os.path.join(DATA_DIR, "micromobility_september_2024.csv")
 
 # Distance threshold (in meters)
 DISTANCE_THRESHOLD_METERS = 100
-DISTANCE_THRESHOLD_METERS = 100
 
 
 def haversine(lat1, lon1, lat2, lon2):
@@ -61,11 +60,11 @@ def main():
     high_demand = parking_df.sort_values("scooter_count", ascending=False).head(9)
     low_demand = parking_df.sort_values("scooter_count").head(9)
 
-    print("\n🔝 Top 10 High-Demand Parking Zones:")
+    print("\n🔝 Top 9 High-Demand Parking Zones:")
     for _, row in high_demand.iterrows():
         print(f"{row['Name']} - {row['Address']}, {row['Municipality']}: {row['scooter_count']} scooters nearby")
 
-    print("\n🔻 Bottom 10 Low-Demand Parking Zones:")
+    print("\n🔻 Bottom 9 Low-Demand Parking Zones:")
     for _, row in low_demand.iterrows():
         print(f"{row['Name']} - {row['Address']}, {row['Municipality']}: {row['scooter_count']} scooters nearby")
 

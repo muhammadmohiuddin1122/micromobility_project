@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_213138a7ff7d231e562d20467cd685ba {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_213138a7ff7d231e562d20467cd685ba" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_213138a7ff7d231e562d20467cd685ba = L.map(
+                "map_213138a7ff7d231e562d20467cd685ba",
+                {
+                    center: [50.8508, 4.3517],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 13,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_a0af114447e1c8c70fcc9fbd5f7fa89c = L.tileLayer(
+                "https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 20,
+  "maxNativeZoom": 20,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors \u0026copy; \u003ca href=\"https://carto.com/attributions\"\u003eCARTO\u003c/a\u003e",
+  "subdomains": "abcd",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_a0af114447e1c8c70fcc9fbd5f7fa89c.addTo(map_213138a7ff7d231e562d20467cd685ba);
+        
+    
+            var rectangle_c96003046ed898462f596edcd5619979 = L.rectangle(
+                [[50.8531800025207, 4.340539995913506], [50.8540800025207, 4.341939995913506]],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.4, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_213138a7ff7d231e562d20467cd685ba);
+        
+    
+        var popup_9e33c516e4e2eaea6d67c19008d23937 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_282221ae6b537dc11dea8443564bb52d = $(`<div id="html_282221ae6b537dc11dea8443564bb52d" style="width: 100.0%; height: 100.0%;">         <b>Name:</b> CJM90<br>         <b>Status:</b> Active<br>         <b>Address:</b> Quai des Charbonnages 8<br>         <b>Municipality:</b> Molenbeek-Saint-Jean<br>         <b>Total Hour:</b> 31<br>         <b>Scooters nearby (100m):</b> 56<br>         <b>Google Maps:</b> <a href="https://www.google.com/maps/search/?api=1&query=50.8536300025207%2C4.341239995913506" target="_blank">View</a><br>         </div>`)[0];
+                popup_9e33c516e4e2eaea6d67c19008d23937.setContent(html_282221ae6b537dc11dea8443564bb52d);
+            
+        
+
+        rectangle_c96003046ed898462f596edcd5619979.bindPopup(popup_9e33c516e4e2eaea6d67c19008d23937)
+        ;
+
+        
+    
+    
+            var rectangle_fe15ec433ff164c6fce73c9a1016181c = L.rectangle(
+                [[50.84489100252618, 4.36788299590588], [50.845791002526184, 4.3692829959058805]],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.4, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_213138a7ff7d231e562d20467cd685ba);
+        
+    
+        var popup_8335e37cd08e634b02f0e819b79c3e79 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_6ea9f332eeb6095cb1ebdc0281b804f2 = $(`<div id="html_6ea9f332eeb6095cb1ebdc0281b804f2" style="width: 100.0%; height: 100.0%;">         <b>Name:</b> CB1101<br>         <b>Status:</b> Active<br>         <b>Address:</b> Avenue des Arts 26<br>         <b>Municipality:</b> Bruxelles<br>         <b>Total Hour:</b> 32<br>         <b>Scooters nearby (100m):</b> 397<br>         <b>Google Maps:</b> <a href="https://www.google.com/maps/search/?api=1&query=50.84534100252618%2C4.36858299590588" target="_blank">View</a><br>         </div>`)[0];
+                popup_8335e37cd08e634b02f0e819b79c3e79.setContent(html_6ea9f332eeb6095cb1ebdc0281b804f2);
+            
+        
+
+        rectangle_fe15ec433ff164c6fce73c9a1016181c.bindPopup(popup_8335e37cd08e634b02f0e819b79c3e79)
+        ;
+
+        
+    
+    
+            var rectangle_dfe4c78373c34853463d7fc50ad283f8 = L.rectangle(
+                [[50.88140000251615, 4.373260995908418], [50.88230000251615, 4.374660995908418]],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.4, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_213138a7ff7d231e562d20467cd685ba);
+        
+    
+        var popup_49c8e07bfc579d9deae8c97fbaa8d142 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_dfb70ba8a38d8623f6442c212ed2802b = $(`<div id="html_dfb70ba8a38d8623f6442c212ed2802b" style="width: 100.0%; height: 100.0%;">         <b>Name:</b> CB02411<br>         <b>Status:</b> Active<br>         <b>Address:</b> Chaussée de Vilvorde<br>         <b>Municipality:</b> Bruxelles<br>         <b>Total Hour:</b> 17<br>         <b>Scooters nearby (100m):</b> 62<br>         <b>Google Maps:</b> <a href="https://www.google.com/maps/search/?api=1&query=50.88185000251615%2C4.373960995908418" target="_blank">View</a><br>         </div>`)[0];
+                popup_49c8e07bfc579d9deae8c97fbaa8d142.setContent(html_dfb70ba8a38d8623f6442c212ed2802b);
+            
+        
+
+        rectangle_dfe4c78373c34853463d7fc50ad283f8.bindPopup(popup_49c8e07bfc579d9deae8c97fbaa8d142)
+        ;
+
+        
+    
+    
+            var rectangle_8d83b44dc27b8e6af93db3357f29ac11 = L.rectangle(
+                [[50.84292000252792, 4.378113995903146], [50.84382000252792, 4.379513995903146]],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.4, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_213138a7ff7d231e562d20467cd685ba);
+        
+    
+        var popup_c0ba772da5b84c9fb0071b61fc7f02f6 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_89a717badd83a15e49ab62006a622738 = $(`<div id="html_89a717badd83a15e49ab62006a622738" style="width: 100.0%; height: 100.0%;">         <b>Name:</b> CB1143<br>         <b>Status:</b> Active<br>         <b>Address:</b> Rue de la Loi 145<br>         <b>Municipality:</b> Bruxelles<br>         <b>Total Hour:</b> 29<br>         <b>Scooters nearby (100m):</b> 116<br>         <b>Google Maps:</b> <a href="https://www.google.com/maps/search/?api=1&query=50.84337000252792%2C4.378813995903146" target="_blank">View</a><br>         </div>`)[0];
+                popup_c0ba772da5b84c9fb0071b61fc7f02f6.setContent(html_89a717badd83a15e49ab62006a622738);
+            
+        
+
+        rectangle_8d83b44dc27b8e6af93db3357f29ac11.bindPopup(popup_c0ba772da5b84c9fb0071b61fc7f02f6)
+        ;
+
+        
+    
+    
+            var rectangle_b3bd838ef094e817800ae47c474515ad = L.rectangle(
+                [[50.82403000253513, 4.393192995897416], [50.82493000253513, 4.394592995897416]],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.4, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_213138a7ff7d231e562d20467cd685ba);
+        
+    
+        var popup_42bd62083899b9b73d26ef67d5cde155 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_a7824988e7885459faacf875db849ffd = $(`<div id="html_a7824988e7885459faacf875db849ffd" style="width: 100.0%; height: 100.0%;">         <b>Name:</b> CEK049<br>         <b>Status:</b> Active<br>         <b>Address:</b> Boulevard Général Jacques (VUB)<br>         <b>Municipality:</b> Ixelles<br>         <b>Total Hour:</b> 19<br>         <b>Scooters nearby (100m):</b> 83<br>         <b>Google Maps:</b> <a href="https://www.google.com/maps/search/?api=1&query=50.82448000253513%2C4.393892995897416" target="_blank">View</a><br>         </div>`)[0];
+                popup_42bd62083899b9b73d26ef67d5cde155.setContent(html_a7824988e7885459faacf875db849ffd);
+            
+        
+
+        rectangle_b3bd838ef094e817800ae47c474515ad.bindPopup(popup_42bd62083899b9b73d26ef67d5cde155)
+        ;
+
+        
+    
+    
+            var rectangle_06a6bb566fb2afd12dd15e34361fac2b = L.rectangle(
+                [[50.83773200253104, 4.392337995899081], [50.83863200253104, 4.393737995899081]],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.4, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_213138a7ff7d231e562d20467cd685ba);
+        
+    
+        var popup_b4568bfa2eff5e8ccdef643b4daf36f9 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_456423bec9576e65e86a5fcfbe28b9a1 = $(`<div id="html_456423bec9576e65e86a5fcfbe28b9a1" style="width: 100.0%; height: 100.0%;">         <b>Name:</b> CEK31<br>         <b>Status:</b> Active<br>         <b>Address:</b> Avenue des Nerviens 135<br>         <b>Municipality:</b> Etterbeek<br>         <b>Total Hour:</b> 15<br>         <b>Scooters nearby (100m):</b> 172<br>         <b>Google Maps:</b> <a href="https://www.google.com/maps/search/?api=1&query=50.83818200253104%2C4.393037995899081" target="_blank">View</a><br>         </div>`)[0];
+                popup_b4568bfa2eff5e8ccdef643b4daf36f9.setContent(html_456423bec9576e65e86a5fcfbe28b9a1);
+            
+        
+
+        rectangle_06a6bb566fb2afd12dd15e34361fac2b.bindPopup(popup_b4568bfa2eff5e8ccdef643b4daf36f9)
+        ;
+
+        
+    
+    
+            var rectangle_a9ee7ab6ffd2102337a748c1b39ded59 = L.rectangle(
+                [[50.843120002527876, 4.378037995903186], [50.84402000252788, 4.379437995903186]],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.4, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_213138a7ff7d231e562d20467cd685ba);
+        
+    
+        var popup_efbca84cc8e6497373066dba912887b0 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_3e0a522654c06543fa0c29d932523e0d = $(`<div id="html_3e0a522654c06543fa0c29d932523e0d" style="width: 100.0%; height: 100.0%;">         <b>Name:</b> CB1142<br>         <b>Status:</b> Active<br>         <b>Address:</b> Rue de la Loi 130<br>         <b>Municipality:</b> Bruxelles<br>         <b>Total Hour:</b> 15<br>         <b>Scooters nearby (100m):</b> 91<br>         <b>Google Maps:</b> <a href="https://www.google.com/maps/search/?api=1&query=50.843570002527876%2C4.378737995903186" target="_blank">View</a><br>         </div>`)[0];
+                popup_efbca84cc8e6497373066dba912887b0.setContent(html_3e0a522654c06543fa0c29d932523e0d);
+            
+        
+
+        rectangle_a9ee7ab6ffd2102337a748c1b39ded59.bindPopup(popup_efbca84cc8e6497373066dba912887b0)
+        ;
+
+        
+    
+    
+            var rectangle_ff678daae1c2546d40d657cb760ef5bd = L.rectangle(
+                [[50.84003000252439, 4.3393099959124175], [50.84093000252439, 4.340709995912418]],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.4, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_213138a7ff7d231e562d20467cd685ba);
+        
+    
+        var popup_4f732944faf192b3946fac7cd900c8df = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_888f8c6c0e96e64c144da23847305f21 = $(`<div id="html_888f8c6c0e96e64c144da23847305f21" style="width: 100.0%; height: 100.0%;">         <b>Name:</b> CB2105<br>         <b>Status:</b> Active<br>         <b>Address:</b> Boulevard Poincaré 75<br>         <b>Municipality:</b> Anderlecht<br>         <b>Total Hour:</b> 29<br>         <b>Scooters nearby (100m):</b> 344<br>         <b>Google Maps:</b> <a href="https://www.google.com/maps/search/?api=1&query=50.84048000252439%2C4.340009995912418" target="_blank">View</a><br>         </div>`)[0];
+                popup_4f732944faf192b3946fac7cd900c8df.setContent(html_888f8c6c0e96e64c144da23847305f21);
+            
+        
+
+        rectangle_ff678daae1c2546d40d657cb760ef5bd.bindPopup(popup_4f732944faf192b3946fac7cd900c8df)
+        ;
+
+        
+    
+    
+            var rectangle_aa193f1256b312f8224790ff959932de = L.rectangle(
+                [[50.8201710025259, 4.301291995919691], [50.821071002525905, 4.302691995919691]],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.4, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_213138a7ff7d231e562d20467cd685ba);
+        
+    
+        var popup_511d538bd8e37d97ea1338cd4146c56a = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_6bf0148a8a053e169a53f8882682bdbf = $(`<div id="html_6bf0148a8a053e169a53f8882682bdbf" style="width: 100.0%; height: 100.0%;">         <b>Name:</b> CAT17<br>         <b>Status:</b> Active<br>         <b>Address:</b> Quai de Veeweyde 11<br>         <b>Municipality:</b> Anderlecht<br>         <b>Total Hour:</b> 5<br>         <b>Scooters nearby (100m):</b> 134<br>         <b>Google Maps:</b> <a href="https://www.google.com/maps/search/?api=1&query=50.820621002525904%2C4.301991995919691" target="_blank">View</a><br>         </div>`)[0];
+                popup_511d538bd8e37d97ea1338cd4146c56a.setContent(html_6bf0148a8a053e169a53f8882682bdbf);
+            
+        
+
+        rectangle_aa193f1256b312f8224790ff959932de.bindPopup(popup_511d538bd8e37d97ea1338cd4146c56a)
+        ;
+
+        
+    
+    
+            var rectangle_bb5c919043ff737a9f61c5801a5aa582 = L.rectangle(
+                [[50.82092600253522, 4.386018995898861], [50.82182600253522, 4.387418995898861]],
+                {"bubblingMouseEvents": true, "color": "gray", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "gray", "fillOpacity": 0.4, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_213138a7ff7d231e562d20467cd685ba);
+        
+    
+        var popup_0315043c23391d72a4453d12e1ec8129 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_d9199565a24a04804d8f33079e14210a = $(`<div id="html_d9199565a24a04804d8f33079e14210a" style="width: 100.0%; height: 100.0%;">         <b>Name:</b> CEE016<br>         <b>Status:</b> Active<br>         <b>Address:</b> Avenue Général Jacques 210<br>         <b>Municipality:</b> Ixelles<br>         <b>Total Hour:</b> 11<br>         <b>Scooters nearby (100m):</b> 0<br>         <b>Google Maps:</b> <a href="https://www.google.com/maps/search/?api=1&query=50.82137600253522%2C4.386718995898861" target="_blank">View</a><br>         </div>`)[0];
+                popup_0315043c23391d72a4453d12e1ec8129.setContent(html_d9199565a24a04804d8f33079e14210a);
+            
+        
+
+        rectangle_bb5c919043ff737a9f61c5801a5aa582.bindPopup(popup_0315043c23391d72a4453d12e1ec8129)
+        ;
+
+        
+    
+    
+            var rectangle_5091f2527ddbaa3855dbd377dc7a4fce = L.rectangle(
+                [[50.83875000253155, 4.399558995897405], [50.83965000253155, 4.400958995897406]],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.4, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_213138a7ff7d231e562d20467cd685ba);
+        
+    
+        var popup_35bc18a39d49e8c6c7ffe85c33c41eea = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_6e98b3b0653d65dbf250ffa1c0b5848a = $(`<div id="html_6e98b3b0653d65dbf250ffa1c0b5848a" style="width: 100.0%; height: 100.0%;">         <b>Name:</b> CEK18<br>         <b>Status:</b> Active<br>         <b>Address:</b> Avenue de Tervueren 28<br>         <b>Municipality:</b> Etterbeek<br>         <b>Total Hour:</b> 7<br>         <b>Scooters nearby (100m):</b> 441<br>         <b>Google Maps:</b> <a href="https://www.google.com/maps/search/?api=1&query=50.83920000253155%2C4.400258995897405" target="_blank">View</a><br>         </div>`)[0];
+                popup_35bc18a39d49e8c6c7ffe85c33c41eea.setContent(html_6e98b3b0653d65dbf250ffa1c0b5848a);
+            
+        
+
+        rectangle_5091f2527ddbaa3855dbd377dc7a4fce.bindPopup(popup_35bc18a39d49e8c6c7ffe85c33c41eea)
+        ;
+
+        
+    
+    
+            var rectangle_2fbac24ec7299f2085841a3f1a07f42e = L.rectangle(
+                [[50.81984000254048, 4.429420995888016], [50.82074000254048, 4.430820995888016]],
+                {"bubblingMouseEvents": true, "color": "gray", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "gray", "fillOpacity": 0.4, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_213138a7ff7d231e562d20467cd685ba);
+        
+    
+        var popup_6765790740248cb63f45f5312911ff31 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_560cdb07c5852018355856cff760efcc = $(`<div id="html_560cdb07c5852018355856cff760efcc" style="width: 100.0%; height: 100.0%;">         <b>Name:</b> COM205<br>         <b>Status:</b> Active<br>         <b>Address:</b> Boulevard du Souverain 213<br>         <b>Municipality:</b> Auderghem<br>         <b>Total Hour:</b> 40<br>         <b>Scooters nearby (100m):</b> 0<br>         <b>Google Maps:</b> <a href="https://www.google.com/maps/search/?api=1&query=50.82029000254048%2C4.430120995888016" target="_blank">View</a><br>         </div>`)[0];
+                popup_6765790740248cb63f45f5312911ff31.setContent(html_560cdb07c5852018355856cff760efcc);
+            
+        
+
+        rectangle_2fbac24ec7299f2085841a3f1a07f42e.bindPopup(popup_6765790740248cb63f45f5312911ff31)
+        ;
+
+        
+    
+    
+            var rectangle_35fd0401611379653458af9a53b509ce = L.rectangle(
+                [[50.81195800253699, 4.378553995899753], [50.81285800253699, 4.379953995899753]],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.4, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_213138a7ff7d231e562d20467cd685ba);
+        
+    
+        var popup_cde7298dfa195db6f396b5c1899faefa = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_3e8edc6cd911e2cd386681ec511f06b7 = $(`<div id="html_3e8edc6cd911e2cd386681ec511f06b7" style="width: 100.0%; height: 100.0%;">         <b>Name:</b> CB1599<br>         <b>Status:</b> Active<br>         <b>Address:</b> Avenue Franklin Rooseveltlaan 48<br>         <b>Municipality:</b> Bruxelles<br>         <b>Total Hour:</b> 7<br>         <b>Scooters nearby (100m):</b> 194<br>         <b>Google Maps:</b> <a href="https://www.google.com/maps/search/?api=1&query=50.81240800253699%2C4.379253995899753" target="_blank">View</a><br>         </div>`)[0];
+                popup_cde7298dfa195db6f396b5c1899faefa.setContent(html_3e8edc6cd911e2cd386681ec511f06b7);
+            
+        
+
+        rectangle_35fd0401611379653458af9a53b509ce.bindPopup(popup_cde7298dfa195db6f396b5c1899faefa)
+        ;
+
+        
+    
+    
+            var rectangle_d28a04f166625daf858fa573aafdb3ee = L.rectangle(
+                [[50.811830002536986, 4.378099995899851], [50.81273000253699, 4.3794999958998515]],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.4, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_213138a7ff7d231e562d20467cd685ba);
+        
+    
+        var popup_d7350667d2a34787b6f229cd3eee0ebf = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_dc18887b469b629fc525ce58582ca99b = $(`<div id="html_dc18887b469b629fc525ce58582ca99b" style="width: 100.0%; height: 100.0%;">         <b>Name:</b> CB1699<br>         <b>Status:</b> Active<br>         <b>Address:</b> Avenue Franklin Roosevelt 19<br>         <b>Municipality:</b> Bruxelles<br>         <b>Total Hour:</b> 5<br>         <b>Scooters nearby (100m):</b> 194<br>         <b>Google Maps:</b> <a href="https://www.google.com/maps/search/?api=1&query=50.81228000253699%2C4.378799995899851" target="_blank">View</a><br>         </div>`)[0];
+                popup_d7350667d2a34787b6f229cd3eee0ebf.setContent(html_dc18887b469b629fc525ce58582ca99b);
+            
+        
+
+        rectangle_d28a04f166625daf858fa573aafdb3ee.bindPopup(popup_d7350667d2a34787b6f229cd3eee0ebf)
+        ;
+
+        
+    
+    
+            var rectangle_c055ab482da56532430ae6eba030be33 = L.rectangle(
+                [[50.83754800253579, 4.434129995888728], [50.83844800253579, 4.435529995888729]],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.4, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_213138a7ff7d231e562d20467cd685ba);
+        
+    
+        var popup_e71bb13e7cb4b51e3b18ac543356e2a0 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_5483a8764f2df362778698537567dc03 = $(`<div id="html_5483a8764f2df362778698537567dc03" style="width: 100.0%; height: 100.0%;">         <b>Name:</b> CLW239<br>         <b>Status:</b> Active<br>         <b>Address:</b> Boulevard de la Woluwe 34<br>         <b>Municipality:</b> Woluwe-Saint-Lambert<br>         <b>Total Hour:</b> 1<br>         <b>Scooters nearby (100m):</b> 72<br>         <b>Google Maps:</b> <a href="https://www.google.com/maps/search/?api=1&query=50.83799800253579%2C4.4348299958887285" target="_blank">View</a><br>         </div>`)[0];
+                popup_e71bb13e7cb4b51e3b18ac543356e2a0.setContent(html_5483a8764f2df362778698537567dc03);
+            
+        
+
+        rectangle_c055ab482da56532430ae6eba030be33.bindPopup(popup_e71bb13e7cb4b51e3b18ac543356e2a0)
+        ;
+
+        
+    
+    
+            var rectangle_2152fe8d0bbff999b60c7add652c7b0a = L.rectangle(
+                [[50.86647100252375, 4.402234995899683], [50.867371002523754, 4.403634995899683]],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.4, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_213138a7ff7d231e562d20467cd685ba);
+        
+    
+        var popup_efe68f93076495fbc452bd8b1535f358 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_394e81cd8b98a1f43ff39250964c229b = $(`<div id="html_394e81cd8b98a1f43ff39250964c229b" style="width: 100.0%; height: 100.0%;">         <b>Name:</b> CEV011<br>         <b>Status:</b> Active<br>         <b>Address:</b> Avenue Léopold III / Avenue des Loisirs<br>         <b>Municipality:</b> Evere<br>         <b>Total Hour:</b> 4<br>         <b>Scooters nearby (100m):</b> 162<br>         <b>Google Maps:</b> <a href="https://www.google.com/maps/search/?api=1&query=50.86692100252375%2C4.402934995899683" target="_blank">View</a><br>         </div>`)[0];
+                popup_efe68f93076495fbc452bd8b1535f358.setContent(html_394e81cd8b98a1f43ff39250964c229b);
+            
+        
+
+        rectangle_2152fe8d0bbff999b60c7add652c7b0a.bindPopup(popup_efe68f93076495fbc452bd8b1535f358)
+        ;
+
+        
+    
+    
+            var rectangle_62f5f03d74d93cea59bfcfadfa2fc317 = L.rectangle(
+                [[50.804916002531435, 4.3108889959157075], [50.80581600253144, 4.312288995915708]],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.4, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_213138a7ff7d231e562d20467cd685ba);
+        
+    
+        var popup_78f4b34eb28740c03bfe9e02bd48d5f3 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_638473d2023ea6becec22c895cecdf8a = $(`<div id="html_638473d2023ea6becec22c895cecdf8a" style="width: 100.0%; height: 100.0%;">         <b>Name:</b> CVT387<br>         <b>Status:</b> Active<br>         <b>Address:</b> rue de Hal 164<br>         <b>Municipality:</b> Forest<br>         <b>Total Hour:</b> 3<br>         <b>Scooters nearby (100m):</b> 211<br>         <b>Google Maps:</b> <a href="https://www.google.com/maps/search/?api=1&query=50.805366002531436%2C4.311588995915708" target="_blank">View</a><br>         </div>`)[0];
+                popup_78f4b34eb28740c03bfe9e02bd48d5f3.setContent(html_638473d2023ea6becec22c895cecdf8a);
+            
+        
+
+        rectangle_62f5f03d74d93cea59bfcfadfa2fc317.bindPopup(popup_78f4b34eb28740c03bfe9e02bd48d5f3)
+        ;
+
+        
+    
+    
+            var rectangle_1bc67af9b9033ac84964eee1b8704b14 = L.rectangle(
+                [[50.87984700251005, 4.31501399592], [50.88074700251005, 4.3164139959200005]],
+                {"bubblingMouseEvents": true, "color": "gray", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "gray", "fillOpacity": 0.4, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_213138a7ff7d231e562d20467cd685ba);
+        
+    
+        var popup_7808205b3c82148bf7fbf4ff0df59857 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_925ad5f87dd5279adce75b420d79f453 = $(`<div id="html_925ad5f87dd5279adce75b420d79f453" style="width: 100.0%; height: 100.0%;">         <b>Name:</b> CJE181<br>         <b>Status:</b> Active<br>         <b>Address:</b> Avenue de l'Exposition<br>         <b>Municipality:</b> Jette<br>         <b>Total Hour:</b> 4<br>         <b>Scooters nearby (100m):</b> 0<br>         <b>Google Maps:</b> <a href="https://www.google.com/maps/search/?api=1&query=50.88029700251005%2C4.315713995922622" target="_blank">View</a><br>         </div>`)[0];
+                popup_7808205b3c82148bf7fbf4ff0df59857.setContent(html_925ad5f87dd5279adce75b420d79f453);
+            
+        
+
+        rectangle_1bc67af9b9033ac84964eee1b8704b14.bindPopup(popup_7808205b3c82148bf7fbf4ff0df59857)
+        ;
+
+        
+    
+</script>
+</html>

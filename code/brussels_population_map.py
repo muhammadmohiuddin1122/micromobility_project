@@ -43,7 +43,7 @@ for loc in locations:
     ).add_to(m)
 
 # Step 6: Save the map to the output folder
-output_path = "../output/brussels_map.html"
+output_path = "../output/brussels_population_map.html"
 os.makedirs(os.path.dirname(output_path), exist_ok=True)
 m.save(output_path)
 

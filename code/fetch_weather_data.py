@@ -1,70 +1,77 @@
 import requests
 import csv
 import os
-from datetime import datetime, timedelta
+from datetime import datetime, timedelta, timezone
 
-# 1. Create full path to ../brussels_weather_data/
+# Set up the output folder path relative to the script's parent directory
 script_dir = os.path.dirname(os.path.abspath(__file__))
-output_dir = os.path.abspath(os.path.join(script_dir, "..", "brussels_weather_data"))
-os.makedirs(output_dir, exist_ok=True)
+project_root = os.path.abspath(os.path.join(script_dir, '..'))
+output_folder = os.path.join(project_root, 'brussels_weather_data')
+os.makedirs(output_folder, exist_ok=True)
 
-csv_filename = os.path.join(output_dir, "weather_september_2024.csv")
-
-# 2. Generate timestamps for each day in September 2024 at 11:00 AM
-start_date = datetime(2024, 9, 1, 11, 0)
-timestamps = [int((start_date + timedelta(days=i)).timestamp()) for i in range(30)]
-
-# 3. CSV headers
-fieldnames = [
-    'date', 'lat', 'lon',
-    'temp', 'feels_like', 'temp_min', 'temp_max',
-    'pressure', 'humidity',
-    'weather_main', 'weather_desc',
-    'wind_speed', 'wind_deg',
-    'clouds_all', 'visibility',
-    'sunrise', 'sunset'
-]
-
-# 4. API setup
+# API endpoint and token
 url = "https://api.mobilitytwin.brussels/environment/weather"
-api_key = "9a2cb3a0c7af0e5689d9f175e330f5ccea5e29dec62076baf1ce96d876451362c505e0f7d2b8cdb0025b9402404712b68d426bcc1652d050b85b5e102693af70"  # Replace with your valid API key
+headers = {
+    'Authorization': 'Bearer 69dcb55e29bf5e591c447540f8145a55d2e7f88f9faafc90db36203240b31b09bf87162cb197e8d9ae9f8183b794071d8b5664dd4817f1453b7d9e4a1d864f94'
+}
 
-# 5. Make requests and save data to CSV
-with open(csv_filename, mode='w', newline='') as csv_file:
-    writer = csv.DictWriter(csv_file, fieldnames=fieldnames)
+# Generate hourly timestamps for September 2024 (UTC time)
+start_date = datetime(2024, 9, 1, 0, 0, tzinfo=timezone.utc)
+end_date = datetime(2024, 9, 30, 23, 0, tzinfo=timezone.utc)
+
+timestamps = []
+current = start_date
+while current <= end_date:
+    timestamps.append(int(current.timestamp()))
+    current += timedelta(hours=1)
+
+# Fetch data
+all_records = []
+
+for ts in timestamps:
+    response = requests.get(url, params={'timestamp': ts}, headers=headers)
+    print(f"Timestamp {ts} → Status {response.status_code}")
+
+    if response.status_code == 200:
+        data = response.json()
+        all_records.append(data)
+    else:
+        print(f"Error for timestamp {ts}")
+
+# Flatten function
+def flatten_weather(record):
+    return {
+        'timestamp': datetime.utcfromtimestamp(record['dt']).strftime('%Y-%m-%d %H:%M:%S'),
+        'lon': record['coord']['lon'],
+        'lat': record['coord']['lat'],
+        'name': record['name'],
+        'country': record['sys']['country'],
+        'timezone': record['timezone'],
+        'temp': record['main']['temp'],
+        'feels_like': record['main']['feels_like'],
+        'temp_min': record['main']['temp_min'],
+        'temp_max': record['main']['temp_max'],
+        'pressure': record['main']['pressure'],
+        'humidity': record['main']['humidity'],
+        'visibility': record.get('visibility'),
+        'wind_speed': record['wind'].get('speed'),
+        'wind_deg': record['wind'].get('deg'),
+        'wind_gust': record['wind'].get('gust'),
+        'clouds_all': record['clouds']['all'],
+        'rain_1h': record.get('rain', {}).get('1h'),
+        'weather_id': record['weather'][0]['id'],
+        'weather_main': record['weather'][0]['main'],
+        'weather_description': record['weather'][0]['description'],
+        'sunrise': datetime.utcfromtimestamp(record['sys']['sunrise']).strftime('%Y-%m-%d %H:%M:%S'),
+        'sunset': datetime.utcfromtimestamp(record['sys']['sunset']).strftime('%Y-%m-%d %H:%M:%S'),
+    }
+
+# Save to CSV
+csv_path = os.path.join(output_folder, 'brussels_weather_hourly_september_2024.csv')
+with open(csv_path, 'w', newline='', encoding='utf-8') as f:
+    writer = csv.DictWriter(f, fieldnames=flatten_weather(all_records[0]).keys())
     writer.writeheader()
+    for record in all_records:
+        writer.writerow(flatten_weather(record))
 
-    for ts in timestamps:
-        response = requests.get(url, params={'timestamp': ts}, headers={
-            'Authorization': f'Bearer {api_key}'
-        })
-
-        print(f"Fetching: {datetime.fromtimestamp(ts)} - Status: {response.status_code}")
-
-        if response.status_code == 200:
-            data = response.json()
-            try:
-                row = {
-                    'date': datetime.fromtimestamp(ts).strftime("%Y-%m-%d %H:%M"),
-                    'lat': data['coord']['lat'],
-                    'lon': data['coord']['lon'],
-                    'temp': data['main']['temp'],
-                    'feels_like': data['main']['feels_like'],
-                    'temp_min': data['main']['temp_min'],
-                    'temp_max': data['main']['temp_max'],
-                    'pressure': data['main']['pressure'],
-                    'humidity': data['main']['humidity'],
-                    'weather_main': data['weather'][0]['main'],
-                    'weather_desc': data['weather'][0]['description'],
-                    'wind_speed': data['wind']['speed'],
-                    'wind_deg': data['wind']['deg'],
-                    'clouds_all': data['clouds']['all'],
-                    'visibility': data['visibility'],
-                    'sunrise': datetime.fromtimestamp(data['sys']['sunrise']).strftime('%H:%M'),
-                    'sunset': datetime.fromtimestamp(data['sys']['sunset']).strftime('%H:%M')
-                }
-                writer.writerow(row)
-            except (KeyError, IndexError) as e:
-                print(f"Missing data on {datetime.fromtimestamp(ts)}: {e}")
-        else:
-            print(f"Failed to fetch data for {ts}")
+print(f"\n✅ Saved hourly weather data to {csv_path}")
